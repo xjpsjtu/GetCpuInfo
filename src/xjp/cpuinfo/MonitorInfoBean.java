@@ -1,5 +1,7 @@
 package xjp.cpuinfo;
 
+import java.text.DecimalFormat;
+
 public class MonitorInfoBean {   
     /** ��ʹ���ڴ�. */   
     private long totalMemory;   
@@ -92,8 +94,9 @@ public class MonitorInfoBean {
         this.usedMemory = usedMemory;   
     }   
   
-    public double getCpuRatio() {   
-        return cpuRatio;   
+    public String getCpuRatio() {   
+	DecimalFormat    df   = new DecimalFormat("######0.00"); 
+        return df.format(cpuRatio);   
     }   
   
     public void setCpuRatio(double cpuRatio) {   
